@@ -1,26 +1,175 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@plugin "tailwind-scrollbar";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /*breakpoints*/
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 740px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1130px;
+  --breakpoint-2xl: 1520px;
+
+  /*colors*/
+  --color-primary: #0d091a;
+  --color-secondary: #140e25;
+  --color-accent: #5810ff;
+  --color-accent-hover: #4a0bde;
+  --color-tertiary: #201837;
+  --color-tertiary-hover: #271f40;
+
+  /*fonts*/
+  --font-primary: "Sometype_Mono";
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/*body*/
+body {
+  font-family: "Sometype_Mono", monospace;
+  background-color: #0d091a;
+  color: #fff;
+  line-height: 1.625;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.h1 {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-weight: 800;
+}
+.h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  /* Responsive styles */
+}
+@media (min-width: 740px) {
+  .h2 {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1130px) {
+  .h2 {
+    font-size: 38px;
+  }
+}
+.h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+@media (min-width: 740px) {
+  .h3 {
+    font-size: 30px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1130px) {
+  .h3 {
+    font-size: 32px;
+  }
+}
+.h4 {
+  font-size: 22px;
+  line-height: 1.375;
+  font-weight: 500;
+}
+
+@media (min-width: 740px) {
+  .h4 {
+    font-size: 26px;
+  }
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@media (min-width: 640px) {
+  .btn {
+    min-width: 168px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1024px) {
+  .btn {
+    min-width: 200px;
+    /* padding-left: 2.5rem;
+    padding-right: 2.5rem; */
+  }
+}
+
+/* .btn-sm {
+  min-width: 168px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+} */
+
+/* .btn-lg {
+  min-width: 200px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+} */
+
+.btn-accent {
+  background-color: var(--color-accent);
+}
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-tertiary {
+  background-color: var(--color-tertiary);
+}
+.btn-tertiary:hover {
+  background-color: var(--color-tertiary-hover);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+.btn-white:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 740px) {
+  .h1 {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1130px) {
+  .h1 {
+    font-size: 56px;
+  }
+}
+
+/* swiper css */
+.swiper {
+  margin: 0 !important;
+
+}
+/* swiper bullets */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal .swiper-pagination-bullets
+.swiper-pagination-bullet {
+  background-color: #5810ff;
 }
