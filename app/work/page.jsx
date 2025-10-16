@@ -15,7 +15,7 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     id: 1,
-    catergory: "frontend",
+    category: "frontend",
     title: "Multi Step Form",
     description: "HTML 5 + Javascript",
     image: "/assets/work/project1.png",
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 2,
-    catergory: "frontend",
+    category: "frontend",
     title: "Food Website",
     description: "React",
     image: "/assets/work/project2.png",
@@ -35,17 +35,23 @@ const projects = [
   },
   {
     id: 3,
-    catergory: "frontend",
-    title: "Flyo Landing Page",
-    description: "HTML 5 + Javascript",
-    image: "/assets/work/project3.png",
-    link: "https://flyo-landingpage.vercel.app/",
-    github: "https://github.com/U-Sarah/flyo-landingpage-repo.git",
-    tech: ["HTML", "CSS 3", "Javascript"],
+    category: "frontend",
+    title: "Aces Tennis Landing Page",
+    description: "Next.js + Tailwind Css + Typescript",
+    image: "/assets/work/full.png",
+    link: "https://www.acestennisllc.com/",
+    github: "https://github.com/aces-tennis25/aces",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer-motion",
+      "TypeScript",
+      "Shadcn Ui",
+    ],
   },
   {
     id: 4,
-    catergory: "fullstack",
+    category: "fullstack",
     title: "MHP Landing Page",
     description: "React + Tailwind Css + Node.js",
     image: "/assets/work/project4.png",
@@ -61,7 +67,7 @@ const projects = [
   },
   {
     id: 5,
-    catergory: "fullstack",
+    category: "fullstack",
     title: "Book Management Login Page",
     description: "React + Tailwind Css + Node.js",
     image: "/assets/work/project5.png",
@@ -76,6 +82,51 @@ const projects = [
       "Express",
     ],
   },
+  {
+    id: 6,
+    category: "frontend",
+    title: "Flyo Landing Page",
+    description: "HTML 5 + Javascript",
+    image: "/assets/work/project3.png",
+    link: "https://flyo-landingpage.vercel.app/",
+    github: "https://github.com/U-Sarah/flyo-landingpage-repo.git",
+    tech: ["HTML", "CSS 3", "Javascript"],
+  },
+  {
+    id: 7,
+    category: "fullstack",
+    title: "BlogSpace Blogs Page",
+    description: "React.js + Tailwind Css + TypeScript",
+    image: "/assets/work/blog.png",
+    link: "https://blog-website-frontend-gules-eight.vercel.app/blogs",
+    github: "https://github.com/U-Sarah/my-portfolio",
+    tech: [
+      "React.js",
+      "Tailwind CSS",
+      "Data-Aos",
+      "Framer-motion",
+      "TypeScript",
+      "Node.js",
+      "MongoDB"
+    ],
+  },
+  {
+    id: 8,
+    category: "fullstack",
+    title: "WearVBO Active Wear HomePage",
+    description: "Next.js + Tailwind CSs + TypeScript",
+    image: "/assets/work/wearvbo.png",
+    link: "https://www.wearvbo.com/",
+    github: "https://github.com/WearVBO/wear-vbo",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Data-Aos",
+      "Node.js",
+      "Typescript",
+      "Mail Chimp"
+    ]
+  }
 ];
 
 const categories = ["frontend", "fullstack"];
@@ -129,7 +180,7 @@ const Work = () => {
                     className="h-max xl:h-[460px]"
                   >
                     {projects
-                      .filter((project) => project.catergory === category)
+                      .filter((project) => project.category === category)
                       .map((project) => {
                         return (
                           <SwiperSlide key={project.id} className="h-full">
@@ -139,7 +190,7 @@ const Work = () => {
                                 <h3 className="h3"> {project.title}</h3>
                                 {/* tech */}
                                 <div className="xl:mb-4 max-w-[300px] min-h-[130px] ">
-                                  <p className="mb-4"> Technoogies Used</p>
+                                  <p className="mb-4"> Technologies Used</p>
                                   <ul className="flex flex-wrap gap-6">
                                     {project.tech.map((item, index) => {
                                       return (
